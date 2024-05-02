@@ -1,6 +1,6 @@
 package com.kristjan.springbootlibrary.config;
 
-import com.kristjan.springbootlibrary.entity.Book;
+import com.kristjan.springbootlibrary.entity.Participant;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -21,9 +21,9 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 HttpMethod.DELETE,
                 HttpMethod.PUT};
 
-        config.exposeIdsFor(Book.class);
+        config.exposeIdsFor(Participant.class);
 
-        disableHttpMethods(Book.class, config, theUnsupportedActions);
+        disableHttpMethods(Participant.class, config, theUnsupportedActions);
 
         /* Configure CORS Mapping */
         cors.addMapping(config.getBasePath() + "/**")
